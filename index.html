@@ -116,12 +116,12 @@
                             type: 'post',
                             contentType: 'application/json',
                             data: '{"oURL":"'+$(this).serializeArray()[0].value+'"}',
+                            //everything is fine
                             success: function( data, textStatus, jQxhr ){
-                            // If everything is fine, we show the shortURL to the user
                             var shortURL = "http://s3url.xyz/"+data['sURL'];
-                            $('#response p').html('Short URL: </br><input readonly="true" type="text" value='+shortURL+'></input>');
+                            $('#response p').html('Short URL: </br><input readonly="true" type="text" value='+shortURL+'></input>')},
+                            //an error occured
                             error: function( jqXhr, textStatus, errorThrown ){
-                            // If an error has occured
                             $('#response p').html('An error has occured; Please contact the admin!');
                             console.log( errorThrown );
                             }
